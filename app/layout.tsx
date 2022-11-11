@@ -9,9 +9,9 @@ export default function RootLayout({
     <html>
       <head></head>
       <body>
-        <div className="navbar bg-base-300">
+        <div className="navbar bg-neutral">
           <div className="navbar-start"></div>
-          <div className="navbar-center">
+          <div className="navbar-center bg-neutral text-neutral-content">
             <a className="btn btn-ghost normal-case text-xl">tech-domains</a>
           </div>
           <div className="navbar-end"></div>

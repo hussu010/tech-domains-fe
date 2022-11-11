@@ -1,5 +1,5 @@
-import { EmailAlert } from "../src/components/EmailAlert";
 import { Domain as DomainDetail } from "../src/types/Domain";
+import thumbnail from "../public/thumbnail.webp";
 
 type Domain = {
   _id: DomainDetail["_id"];
@@ -16,14 +16,42 @@ async function getDomains() {
   return domains.data;
 }
 
+const EmailAlert = () => (
+  <div className="alert alert-info shadow-lg mt-6">
+    <div>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        className="stroke-current flex-shrink-0 w-6 h-6"
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth="2"
+          d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+        ></path>
+      </svg>
+      <span>
+        Email{" "}
+        <a
+          href={`mailto:hussu010@gmail.com?subject="Purchase of .btc domain."&body="I would like to purchase DOMAIN.btc."`}
+        >
+          hussu010@gmail.com
+        </a>{" "}
+        to purchase domains.
+      </span>
+    </div>
+  </div>
+);
+
 const Domain = ({ title, status, price }: Domain) => (
   <article className="flex flex-col mx-auto max-w-sm w-full py-6 px-3 cursor-pointer transform duration-500 hover:-translate-y-1">
     <div className="bg-white shadow-xl rounded-lg overflow-hidden">
       <div
         className="bg-cover bg-center h-80 p-4"
         style={{
-          backgroundImage:
-            "url(https://images.squarespace-cdn.com/content/v1/58dd442dbebafb88160c6929/1524859464600-90ZK15JJC3N47IZSR3MY/ke17ZwdGBToddI8pDm48kPvdHwxe8vxmYnjZvCzAU61Zw-zPPgdn4jUwVcJE1ZvWQUxwkmyExglNqGp0IvTJZUJFbgE-7XRK3dMEBRBhUpwxsJYjeBOStWfhZBaQGTlDOVYbSZjX976lCUHHLPdHUlrmON35exl807wLzw9VMGw/visit03.jpg?format=800w)",
+          backgroundImage: `url(${thumbnail.src})`,
         }}
       >
         <div className="flex justify-end">
