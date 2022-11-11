@@ -1,3 +1,4 @@
+import { EmailAlert } from "../src/components/EmailAlert";
 import { Domain as DomainDetail } from "../src/types/Domain";
 
 type Domain = {
@@ -50,12 +51,11 @@ export default async function Domains() {
 
   return (
     <>
-      <section className="container mx-auto">
-        <section className="grid lg:grid-cols-2 2xl:grid-cols-4 grid-cols-1 gap-4 antialiased">
-          {domains.map((domain: Domain) => (
-            <Domain key={domain._id} {...domain} />
-          ))}
-        </section>
+      <EmailAlert />
+      <section className="grid lg:grid-cols-2 2xl:grid-cols-4 grid-cols-1 gap-4 antialiased">
+        {domains.map((domain: Domain) => (
+          <Domain key={domain._id} {...domain} />
+        ))}
       </section>
     </>
   );
